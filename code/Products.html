@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - UrbanDrip Clothing</title>
+    <meta name="description" content="Browse all UrbanDrip products — hoodies, t-shirts, bottoms, footwear and accessories. Affordable streetwear delivered across South Africa.">
+    <meta name="keywords" content="UrbanDrip products, buy hoodies, buy sneakers, streetwear South Africa, affordable clothing online">
+    <meta name="author" content="UrbanDrip Clothing">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1>UrbanDrip</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="Products.html">Products</a>
+        <a href="contact.html">Contact</a>
+        <a href="enquiry.html">Enquire</a>
+    </nav>
+</header>
+
+<div class="products-page">
+
+    <div class="products-page-header">
+        <h2>All Products</h2>
+        <p>Browse our full range of streetwear. Click any item to see more details. New pieces added every month.</p>
+    </div>
+
+    <div class="filter-bar">
+        <input type="text" id="searchInput" placeholder="Search products..." oninput="filterProducts()" aria-label="Search products">
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterCategory('all', this)">All</button>
+            <button class="filter-btn" onclick="filterCategory('hoodies', this)">Hoodies</button>
+            <button class="filter-btn" onclick="filterCategory('t-shirts', this)">T-Shirts</button>
+            <button class="filter-btn" onclick="filterCategory('bottoms', this)">Bottoms</button>
+            <button class="filter-btn" onclick="filterCategory('footwear', this)">Footwear</button>
+            <button class="filter-btn" onclick="filterCategory('accessories', this)">Accessories</button>
+        </div>
+    </div>
+
+    <p class="no-results" id="noResults" style="display:none;">No products match your search.</p>
+
+    <h2 class="category-heading" data-cat="hoodies">Hoodies</h2>
+    <div class="products" data-cat="hoodies">
+
+        <div class="card" data-name="black hoodie" data-cat="hoodies"
+             onclick="openLightbox('Black Hoodie', 'R520', 'A classic black hoodie — comfortable, warm and endlessly wearable. The cornerstone of any streetwear wardrobe.', '../black hoodie.jpg')">
+            <img src="../black hoodie.jpg" alt="Black Hoodie - UrbanDrip Clothing">
+            <div class="card-body">
+                <p class="card-name">Black Hoodie</p>
+                <p class="card-price">R520</p>
+            </div>
+        </div>
+
+        <div class="card" data-name="grey hoodie" data-cat="hoodies"
+             onclick="openLightbox('Grey Hoodie', 'R520', 'Laid-back grey hoodie with a relaxed fit and ultra-soft fabric. Built for comfort from morning to night.', '../grey hoodie.jpg')">
+            <img src="../grey hoodie.jpg" alt="Grey Hoodie - UrbanDrip Clothing">
+            <div class="card-body">
+                <p class="card-name">Grey Hoodie</p>
+                <p class="card-price">R520</p>
+            </div>
+        </div>
+
+    </div>
+
+    <h2 class="category-heading" data-cat="t-shirts">T-Shirts</h2>
+    <div class="products" data-cat="t-shirts">
+
+        <div class="card" data-name="graphic tee" data-cat="t-shirts"
+             onclick="openLightbox('Graphic Tee', 'R220', 'Bold graphic print on premium cotton. Limited-edition designs that make a statement wherever you go.', '../T-shirt.jpg')">
+            <img src="../T-shirt.jpg" alt="Graphic Tee - UrbanDrip Clothing">
+            <div class="card-body">
+                <p class="card-name">Graphic Tee</p>
+                <p class="card-price">R220</p>
+            </div>
+        </div>
+
+        <div class="card" data-name="plain white tee" data-cat="t-shirts"
+             onclick="openLightbox('Plain White Tee', 'R180', 'Essential plain white tee in 100% cotton. Clean, crisp and versatile — a wardrobe staple done right.', '../white tee.jpg')">
+            <img src="../White T-shirt.jpg" alt="Plain White Tee - UrbanDrip Clothing">
+            <div class="card-body">
+                <p class="card-name">Plain White Tee</p>
+                <p class="card-price">R180</p>
+            </div>
+        </div>
+
+    </div>
+
+    <h2 class="category-heading" data-cat="bottoms">Bottoms</h2>
+    <div class="products" data-cat="bottoms">
+
+        <div class="card" data-name="black joggers" data-cat="bottoms"
+             onclick="openLightbox('Black Joggers', 'R390', 'Slim-fit black joggers with an elastic waistband. The perfect everyday bottom for a clean street look.', '../black joggers.jpg')">
+            <img src="../Black Pants.jpg" alt="Black Joggers - UrbanDrip Clothing">
+            <div class="card-body">
+                <p class="card-name">Black Joggers</p>
+                <p class="card-price">R390</p>
+            </div>
+        </div>
+
+        <div class="card" data-name="cargo pants" data-cat="bottoms"
+             onclick="openLightbox('Cargo Pants', 'R480', 'Utility cargo pants with multiple pockets and a relaxed street fit. Function meets fashion.', '../cargo pants.jpg')">
+            <img src="../Grey Cargo.jpg" alt="Cargo Pants - UrbanDrip Clothing">
+            <div class="card-body">
+                <p class="card-name">Cargo Pants</p>
+                <p class="card-price">R480</p>
+            </div>
+        </div>
+
+    </div>
+
+    <h2 class="category-heading" data-cat="footwear">Footwear</h2>
+    <div class="products" data-cat="footwear">
+
+        <div class="card" data-name="white sneakers" data-cat="footwear"
+             onclick="openLightbox('White Sneakers', 'R750', 'Clean white leather sneakers that go with everything in your wardrobe. A streetwear essential.', '../white sneaker.jpg')">
+            <img src="../white sneaker.jpg" alt="White Sneakers - UrbanDrip Clothing">
+            <div class="card-body">
+                <p class="card-name">White Sneakers</p>
+                <p class="card-price">R750</p>
+            </div>
+        </div>
+
+        <div class="card" data-name="street sneakers" data-cat="footwear"
+             onclick="openLightbox('Street Sneakers', 'R950', 'High-top street sneakers with a cushioned sole and bold silhouette. Built for the streets.', '../street sneakers.jpg')">
+            <img src="../grey sneaker.jpg" alt="Street Sneakers - UrbanDrip Clothing">
+            <div class="card-body">
+                <p class="card-name">Street Sneakers</p>
+                <p class="card-price">R950</p>
+            </div>
+        </div>
+
+    </div>
+
+    <h2 class="category-heading" data-cat="accessories">Accessories</h2>
+    <div class="products" data-cat="accessories">
+
+        <div class="card" data-name="snapback cap" data-cat="accessories"
+             onclick="openLightbox('Snapback Cap', 'R200', 'Flat-brim snapback with UrbanDrip embroidery. One size fits all — the finishing touch to any outfit.', '../snapback cap.jpg')">
+            <img src="../snapback cap.jpg" alt="Snapback Cap - UrbanDrip Clothing">
+            <div class="card-body">
+                <p class="card-name">Snapback Cap</p>
+                <p class="card-price">R200</p>
+            </div>
+        </div>
+
+        <div class="card" data-name="knit beanie" data-cat="accessories"
+             onclick="openLightbox('Knit Beanie', 'R150', 'Warm ribbed knit beanie. Keeps you warm without sacrificing style — a winter essential.', '../knit beanie.jpg')">
+            <img src="../knit beanie.jpg" alt="Knit Beanie - UrbanDrip Clothing">
+            <div class="card-body">
+                <p class="card-name">Knit Beanie</p>
+                <p class="card-price">R150</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-content">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="">
+        <div class="lightbox-body">
+            <h2 id="lightboxName"></h2>
+            <p id="lightboxDesc"></p>
+            <span class="lightbox-price" id="lightboxPrice"></span>
+            <a href="enquiry.html" class="lightbox-enquire">Enquire About This Item</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-col footer-brand">
+            <h3>UrbanDrip</h3>
+            <p>Streetwear for the bold. Built on South African street culture and made for the next generation of trendsetters.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navigate</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Products.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="enquiry.html">Enquire</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Connect</h4>
+            <p>Instagram: @urbandripclothing</p>
+            <p>TikTok: @urbandrip</p>
+            <p>WhatsApp: 072 000 0000</p>
+            <p>urbandrip@gmail.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 UrbanDrip Clothing. All rights reserved.</p>
+        <p>Johannesburg, South Africa</p>
+    </div>
+</footer>
+
+<script>
+    var activeCategory = 'all';
+
+    function filterCategory(cat, btn) {
+        activeCategory = cat;
+        var buttons = document.querySelectorAll('.filter-btn');
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].classList.remove('active');
+        }
+        btn.classList.add('active');
+        filterProducts();
+    }
+
+    function filterProducts() {
+        var query = document.getElementById('searchInput').value.toLowerCase().trim();
+        var cards = document.querySelectorAll('.card');
+        var anyVisible = false;
+
+        for (var i = 0; i < cards.length; i++) {
+            var card = cards[i];
+            var catMatch  = (activeCategory === 'all') || (card.getAttribute('data-cat') === activeCategory);
+            var nameMatch = card.getAttribute('data-name').indexOf(query) !== -1;
+
+            if (catMatch && nameMatch) {
+                card.style.display = '';
+                anyVisible = true;
+            } else {
+                card.style.display = 'none';
+            }
+        }
+
+        var cats = ['hoodies', 't-shirts', 'bottoms', 'footwear', 'accessories'];
+        for (var j = 0; j < cats.length; j++) {
+            var heading  = document.querySelector('.category-heading[data-cat="' + cats[j] + '"]');
+            var row      = document.querySelector('.products[data-cat="' + cats[j] + '"]');
+            var rowCards = row.querySelectorAll('.card');
+            var hasVisible = false;
+            for (var k = 0; k < rowCards.length; k++) {
+                if (rowCards[k].style.display !== 'none') { hasVisible = true; break; }
+            }
+            heading.style.display = hasVisible ? '' : 'none';
+            row.style.display     = hasVisible ? '' : 'none';
+        }
+
+        document.getElementById('noResults').style.display = anyVisible ? 'none' : 'block';
+    }
+
+    function openLightbox(name, price, desc, imgSrc) {
+        var img = document.getElementById('lightboxImg');
+        img.src = imgSrc;
+        img.alt = name;
+        document.getElementById('lightboxName').textContent  = name;
+        document.getElementById('lightboxPrice').textContent = price;
+        document.getElementById('lightboxDesc').textContent  = desc;
+        document.getElementById('lightbox').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(event) {
+        if (!event || event.target === document.getElementById('lightbox')) {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+</script>
+
+</body>
+</html>

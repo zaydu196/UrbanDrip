@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Enquiry - UrbanDrip Clothing</title>
+    <meta name="description" content="Enquire about any UrbanDrip product. Select an item, see the price and send us your details — we will confirm availability and arrange delivery within 24 hours.">
+    <meta name="keywords" content="UrbanDrip enquiry, product enquiry, order streetwear South Africa, buy hoodie online">
+    <meta name="author" content="UrbanDrip Clothing">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1>UrbanDrip</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="Products.html">Products</a>
+        <a href="contact.html">Contact</a>
+        <a href="enquiry.html">Enquire</a>
+    </nav>
+</header>
+
+<div class="page-hero">
+    <p class="page-hero-eyebrow">Interested in something?</p>
+    <h2>Product Enquiry</h2>
+    <p>Select a product, check the price and send us your details. We will confirm availability and delivery within 24 hours.</p>
+</div>
+
+<div class="enquiry-wrapper">
+
+    <h2 class="col-heading">Make an Enquiry</h2>
+    <p class="col-sub">Fill in every field below. Once submitted, we will send you a confirmation and get back to you with everything you need to complete your order.</p>
+
+    <form class="contact-form" id="enquiryForm" novalidate>
+
+        <div class="form-group">
+            <label for="enquiryCategory">Product Category</label>
+            <select id="enquiryCategory" onchange="updateItems()">
+                <option value="">-- Select a category --</option>
+                <option value="hoodies">Hoodies</option>
+                <option value="tshirts">T-Shirts</option>
+                <option value="bottoms">Bottoms</option>
+                <option value="footwear">Footwear</option>
+                <option value="accessories">Accessories</option>
+            </select>
+            <span class="error-msg" id="catError"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="enquiryItem">Product Item</label>
+            <select id="enquiryItem" onchange="updatePrice()">
+                <option value="">-- Select a product --</option>
+            </select>
+            <span class="error-msg" id="itemError"></span>
+        </div>
+
+        <div class="price-display" id="priceDisplay" style="display:none;">
+            Price: <strong id="selectedPrice"></strong>
+        </div>
+
+        <div class="form-group">
+            <label for="enquirySize">Size</label>
+            <select id="enquirySize">
+                <option value="">-- Select a size --</option>
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+                <option value="One Size / N/A">One Size / N/A &mdash; Accessories or Footwear</option>
+            </select>
+            <span class="error-msg" id="sizeError"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="enqName">Full Name</label>
+            <input type="text" id="enqName" placeholder="e.g. Sipho Dlamini" required>
+            <span class="error-msg" id="enqNameError"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="enqEmail">Email Address</label>
+            <input type="email" id="enqEmail" placeholder="e.g. sipho@gmail.com" required>
+            <span class="error-msg" id="enqEmailError"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="enqPhone">Phone Number</label>
+            <input type="tel" id="enqPhone" placeholder="e.g. 071 123 4567" required>
+            <span class="error-msg" id="enqPhoneError"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="enqMessage">Additional Notes (optional)</label>
+            <textarea id="enqMessage" placeholder="Any questions about sizing, colour, delivery or stock..." rows="4"></textarea>
+        </div>
+
+        <button type="submit">Submit Enquiry</button>
+
+    </form>
+
+    <div class="enquiry-summary" id="enquirySummary" style="display:none;">
+        <h3>Enquiry Received</h3>
+        <p><strong>Product:</strong> <span id="sumProduct"></span></p>
+        <p><strong>Size:</strong> <span id="sumSize"></span></p>
+        <p><strong>Price:</strong> <span id="sumPrice"></span></p>
+        <p><strong>Name:</strong> <span id="sumName"></span></p>
+        <p><strong>Email:</strong> <span id="sumEmail"></span></p>
+        <p><strong>Phone:</strong> <span id="sumPhone"></span></p>
+        <p class="summary-note">Thank you! We have received your enquiry and will contact you within 24 hours to confirm availability and arrange delivery.</p>
+        <button onclick="resetEnquiryForm()">Submit Another Enquiry</button>
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-col footer-brand">
+            <h3>UrbanDrip</h3>
+            <p>Streetwear for the bold. Built on South African street culture and made for the next generation of trendsetters.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navigate</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Products.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="enquiry.html">Enquire</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Connect</h4>
+            <p>Instagram: @urbandripclothing</p>
+            <p>TikTok: @urbandrip</p>
+            <p>WhatsApp: 072 000 0000</p>
+            <p>urbandrip@gmail.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 UrbanDrip Clothing. All rights reserved.</p>
+        <p>Johannesburg, South Africa</p>
+    </div>
+</footer>
+
+<script>
+    var catalogue = {
+        hoodies:     [{ name: 'Black Hoodie',   price: 'R520' }, { name: 'Grey Hoodie',     price: 'R520' }],
+        tshirts:     [{ name: 'Graphic Tee',    price: 'R220' }, { name: 'Plain White Tee', price: 'R180' }],
+        bottoms:     [{ name: 'Black Joggers',  price: 'R390' }, { name: 'Cargo Pants',     price: 'R480' }],
+        footwear:    [{ name: 'White Sneakers', price: 'R750' }, { name: 'Street Sneakers', price: 'R950' }],
+        accessories: [{ name: 'Snapback Cap',   price: 'R200' }, { name: 'Knit Beanie',    price: 'R150' }]
+    };
+
+    function updateItems() {
+        var cat = document.getElementById('enquiryCategory').value;
+        var itemSelect = document.getElementById('enquiryItem');
+        itemSelect.innerHTML = '<option value="">-- Select a product --</option>';
+        document.getElementById('priceDisplay').style.display = 'none';
+
+        if (cat && catalogue[cat]) {
+            for (var i = 0; i < catalogue[cat].length; i++) {
+                var opt = document.createElement('option');
+                opt.value = catalogue[cat][i].name;
+                opt.dataset.price = catalogue[cat][i].price;
+                opt.textContent = catalogue[cat][i].name + ' — ' + catalogue[cat][i].price;
+                itemSelect.appendChild(opt);
+            }
+        }
+    }
+
+    function updatePrice() {
+        var itemSelect = document.getElementById('enquiryItem');
+        var selected = itemSelect.options[itemSelect.selectedIndex];
+        if (selected && selected.dataset.price) {
+            document.getElementById('selectedPrice').textContent = selected.dataset.price;
+            document.getElementById('priceDisplay').style.display = 'block';
+        } else {
+            document.getElementById('priceDisplay').style.display = 'none';
+        }
+    }
+
+    document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var cat   = document.getElementById('enquiryCategory');
+        var item  = document.getElementById('enquiryItem');
+        var size  = document.getElementById('enquirySize');
+        var name  = document.getElementById('enqName');
+        var email = document.getElementById('enqEmail');
+        var phone = document.getElementById('enqPhone');
+
+        var ids = ['catError','itemError','sizeError','enqNameError','enqEmailError','enqPhoneError'];
+        for (var i = 0; i < ids.length; i++) { document.getElementById(ids[i]).textContent = ''; }
+
+        var valid = true;
+
+        if (!cat.value)   { document.getElementById('catError').textContent  = 'Please select a category.'; valid = false; }
+        if (!item.value)  { document.getElementById('itemError').textContent = 'Please select a product.';  valid = false; }
+        if (!size.value)  { document.getElementById('sizeError').textContent = 'Please select a size.';     valid = false; }
+
+        if (name.value.trim().length < 2) {
+            document.getElementById('enqNameError').textContent = 'Please enter your full name.';
+            valid = false;
+        }
+
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email.value.trim())) {
+            document.getElementById('enqEmailError').textContent = 'Please enter a valid email address.';
+            valid = false;
+        }
+
+        var phoneRegex = /^[\d\s\+\-]{7,15}$/;
+        if (!phoneRegex.test(phone.value.trim())) {
+            document.getElementById('enqPhoneError').textContent = 'Please enter a valid phone number.';
+            valid = false;
+        }
+
+        if (valid) {
+            var itemSelect  = document.getElementById('enquiryItem');
+            var price = itemSelect.options[itemSelect.selectedIndex].dataset.price || 'N/A';
+
+            document.getElementById('sumProduct').textContent = item.value;
+            document.getElementById('sumSize').textContent    = size.value;
+            document.getElementById('sumPrice').textContent   = price;
+            document.getElementById('sumName').textContent    = name.value.trim();
+            document.getElementById('sumEmail').textContent   = email.value.trim();
+            document.getElementById('sumPhone').textContent   = phone.value.trim();
+
+            document.getElementById('enquiryForm').style.display    = 'none';
+            document.getElementById('enquirySummary').style.display = 'block';
+        }
+    });
+
+    function resetEnquiryForm() {
+        document.getElementById('enquiryForm').reset();
+        document.getElementById('priceDisplay').style.display   = 'none';
+        document.getElementById('enquiryItem').innerHTML        = '<option value="">-- Select a product --</option>';
+        document.getElementById('enquiryForm').style.display    = 'flex';
+        document.getElementById('enquirySummary').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
